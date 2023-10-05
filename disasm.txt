@@ -1,0 +1,9 @@
+in
+push 3.000000
+div
+push 700.000000
+push 100.000000
+div
+sub
+out
+hlt
