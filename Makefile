@@ -21,10 +21,10 @@ BUILD_DIR = ./build
 SRC_DIRS = ./src
 SRC = $(wildcard $(SRC_DIRS)/*.cpp)
 OBJS := $(SRC:%.cpp=$(BUILD_DIR)/%.cpp.o)
-INCLUDE_DIR = ~/Dev/VAssembler/include  # to be changed
-L_DIR = ~/Dev/VAssembler/build/src/vassembler.cpp.o	# to be changed
+INCLUDE_DIR = ~/Dev/assembler/include  # to be changed
+L_DIR = ~/Dev/assembler/build/src/vassembler.cpp.o	# to be changed
 
-EXEC = vdisasm
+EXEC = disasm
 
 $(BUILD_DIR)/$(EXEC): $(OBJS)
 	@$(CC) $(OBJS) $(L_DIR) $(FLAGS) -o $@ -I $(INCLUDE_DIR)

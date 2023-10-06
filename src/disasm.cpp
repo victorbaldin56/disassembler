@@ -1,5 +1,5 @@
-#include "vdisasm.h"
-#include "vasm.h"
+#include "disasm.h"
+#include "asm.h"
 #include <assert.h>
 
 static const size_t MAXSTR = 1000; ///< max string lenght
