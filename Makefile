@@ -23,16 +23,18 @@ SRC = $(wildcard $(SRC_DIRS)/*.cpp)
 OBJS := $(SRC:%.cpp=$(BUILD_DIR)/%.cpp.o)
 INCLUDE_DIR = ~/Dev/assembler/include  # to be changed
 L_DIR = ~/Dev/assembler/build/src/vassembler.cpp.o	# to be changed
+VM_INCLUDE = ~/Dev/VM_CPU/include
+VM_LIBRARY = ~/Dev/VM_CPU/build/src/read_bin.cpp.o
 
 EXEC = disasm
 
 $(BUILD_DIR)/$(EXEC): $(OBJS)
-	@$(CC) $(OBJS) $(L_DIR) $(FLAGS) -o $@ -I $(INCLUDE_DIR)
+	@$(CC) $(OBJS) $(L_DIR) $(VM_LIBRARY) $(FLAGS) -o $@ -I $(INCLUDE_DIR) -I $(VM_INCLUDE)
 
 $(BUILD_DIR)/%.cpp.o: %.cpp
 	@mkdir -p $(BUILD_DIR)
 	@mkdir -p $(BUILD_DIR)/$(SRC_DIRS)
-	@$(CC) $(FLAGS) $(FLAGS) -c $< -o $@ -I $(INCLUDE_DIR)
+	@$(CC) $(FLAGS) $(FLAGS) -c $< -o $@ -I $(INCLUDE_DIR) -I $(VM_INCLUDE)
 
 .PHONY: clean
 

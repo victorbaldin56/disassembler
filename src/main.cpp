@@ -11,8 +11,8 @@ int main(int argc, char *argv[]) {
     }
 
     if (argc == 4 && !strcmp(argv[3], "-o")) {
-        return DisAssembly(argv[1], argv[3]);
+        return DisAssemble(argv[1], argv[3]);
     }
 
-    return DisAssembly(argv[1], "disasm.txt");
+    return DisAssemble(argv[1], "disasm.asm");
 }

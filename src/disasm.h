@@ -11,6 +11,13 @@
 #define ON_DEDUG(x)
 #endif
 
-int DisAssembly(const char *input, const char *output);
+enum disasm_error {
+    DISASM_SUCCEED,
+    DISASM_BAD_ALLOC,
+    DISASM_CREAT_FAILURE,
+    DISASM_FAILURE,
+};
+
+disasm_error DisAssemble(char *input, char *output);
 
 #endif // VDISASM
